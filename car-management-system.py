@@ -107,6 +107,14 @@ class CarFactory:
         return car
     
 
+    @staticmethod
+    def get_all_cars():
+        auto_cars = [car for car in CarFactory.assembled_autos]
+        manual_cars = [car for car in CarFactory.assembled_manuals]
+        
+        return auto_cars + manual_cars
+    
+
 class Car(ABC):
     def __init__(self, name, model, price, body_type, color):
         self.name = name
@@ -234,10 +242,10 @@ class Engine:
 
 
 def main():
-    car_factory = CarFactory()
+    factory = CarFactory()
 
     info = ["BMW", "Dodge", 100000, "sedan", "Black", ["Cruise Control", "Heated Seats", "Self Driving"]]
-    car = car_factory.get_car(["V1", 2500], "auto", info)
+    car = factory.get_car(["V1", 2500], "auto", info)
     
     print(CarFactory.get_all_cars())
         
