@@ -56,7 +56,6 @@ Notes:
 - Include any additional notes or considerations related to the code.
 
 """
-
 from abc import ABC, abstractmethod
 
 
@@ -106,11 +105,10 @@ class CarFactory:
         
         return car
     
-
     @staticmethod
-    def get_all_cars():
-        auto_cars = [car for car in CarFactory.assembled_autos]
-        manual_cars = [car for car in CarFactory.assembled_manuals]
+    def showroom():
+        auto_cars = [car.car_status() for car in CarFactory.assembled_autos]
+        manual_cars = [car.car_status() for car in CarFactory.assembled_manuals]
         
         return auto_cars + manual_cars
     
