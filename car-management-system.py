@@ -110,7 +110,7 @@ class CarFactory:
         auto_cars = [car.car_status() for car in CarFactory.assembled_autos]
         manual_cars = [car.car_status() for car in CarFactory.assembled_manuals]
         
-        return auto_cars + manual_cars
+        return (auto_cars + manual_cars)
     
 
 class Car(ABC):
